@@ -81,7 +81,8 @@ abstract class Controller
             set_error_handler(
                 function ($code, $message, $file, $line, $context) {
                     throw new \Exception($message, $code);
-                }
+                },
+                E_ALL & ~E_DEPRECATED
             );
 
             // read content of request to a string
