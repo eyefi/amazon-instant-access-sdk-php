@@ -82,7 +82,7 @@ abstract class Controller
                 function ($code, $message, $file, $line, $context) {
                     throw new \Exception($message, $code);
                 },
-                E_ALL & ~E_DEPRECATED
+                E_ALL & ~E_WARN & ~E_DEPRECATED
             );
 
             // read content of request to a string
